@@ -1,0 +1,4 @@
+input_path: 
+  - "/home/dunelab/cernbox/LabIFIC/20250723/25072025_LimitScan3.txt"
+  #- "/home/dunelab/cernbox/LabIFIC/20250723/24072025_LimitScan.txt"
+output_path: "/output"
