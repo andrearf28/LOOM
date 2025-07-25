@@ -9,6 +9,12 @@ class LoomTxtReader:
     def __init__(self, path: str):
         self.path = path
 
+    def parse_float_or_none(value):
+        try:
+            return float(value)
+        except ValueError:
+            return None
+    
     def read(self) -> LoomSet:
         metadata = {}
         data_rows: List[LoomRow] = []
@@ -71,8 +77,8 @@ class LoomTxtReader:
                 current_std=float(tokens[6]),
                 dc=float(tokens[6]),
                 dc_std=float(tokens[7]),
-                temperature=float(tokens[9]),
-                humidity=float(tokens[10])
+                temperature=LoomTxtReader.parse_float_or_none(tokens[9]),
+                humidity=LoomTxtReader.parse_float_or_none(tokens[10])
             )
             data_rows.append(row)
 
